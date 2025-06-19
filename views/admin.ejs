@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Travel's Admin</title>
+    <link rel="stylesheet" href="css/admin.css">
+</head>
+<body>
+    <header><h1>Express Travels</h1></header>
+    <main>
+        <section>
+            <h2>Añadir destino</h2>
+            <form action="/insert" method="POST">
+                <div>
+                    <label for="ruta">Ruta :</label>
+                    <input type="text" id="ruta" name="ruta">
+                </div>
+                                <div>
+                    <label for="lugar">Lugar :</label>
+                    <input type="text" id="lugar" name="lugar">
+                </div>
+                                <div>
+                    <label for="nombre">Nombre :</label>
+                    <input type="text" id="nombre" name="nombre">
+                </div>
+                                <div>
+                    <label for="descripcion">Descripción :</label>
+                    <input type="text" id="descripcion" name="descripcion">
+                </div>
+                                </div>
+                                <div>
+                    <label for="precio">Precio :</label>
+                    <input type="text" id="precio" name="precio">
+                </div>
+                                <div>
+                    <label for="img">Ruta de la imagen :</label>
+                    <input type="text" id="img" name="img">
+                </div>
+                <div id="buttons">
+                    <button type="submit">Aceptar</button>
+                    <button type="reset">Borrar</button>
+                </div>
+            </form>
+        </section>
+        <section>
+            <table>
+                <tr>
+                    <th>Ruta</th>
+                    <th>Lugar</th>
+                    <th>Nombre</th>
+                    <th>Precio</th>
+                    <th></th>
+                    <th></th>
+                </tr>
+                <% jsonData.forEach( travel => { %>
+                <tr>
+                    <td><%= travel.ruta %></td>
+                    <td><%= travel.lugar %></td>
+                    <td><%= travel.nombre %></td>
+                    <td><%= travel.precio %></td>
+                    <td><button title="Editar viaje">✏️</button></td>
+                    <td><button title="Borrar viaje">❌</button></td>
+                    
+            <% }) %>
+
+            </table>
+        </section>
+    </main>
+</body>
+</html>

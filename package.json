@@ -1,0 +1,29 @@
+{
+  "name": "node_04_ejs_2",
+  "version": "1.0.0",
+  "description": "Aplicación de ejemplo de uso de Node y EJS",
+  "keywords": [
+    "Node",
+    "Express",
+    "EJS"
+  ],
+  "homepage": "https://github.com/classesdeferran/stucom_ej_2#readme",
+  "bugs": {
+    "url": "https://github.com/classesdeferran/stucom_ej_2/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/classesdeferran/stucom_ej_2.git"
+  },
+  "license": "ISC",
+  "author": "Ferran",
+  "type": "commonjs",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "dependencies": {
+    "ejs": "^3.1.10",
+    "express": "^5.1.0"
+  }
+}
