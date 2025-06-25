@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Travel's Admin</title>
     <link rel="stylesheet" href="css/admin.css">
+    <script src="js/admin.js" defer></script>
 </head>
 <body>
     <header><h1>Express Travels</h1></header>
@@ -55,12 +56,12 @@
                 </tr>
                 <% jsonData.forEach( travel => { %>
                 <tr>
-                    <td><%= travel.ruta %></td>
+                    <td><a href="<%= travel.ruta %>"><%= travel.ruta %></a></td>
                     <td><%= travel.lugar %></td>
                     <td><%= travel.nombre %></td>
                     <td><%= travel.precio %></td>
                     <td><button title="Editar viaje">✏️</button></td>
-                    <td><button title="Borrar viaje">❌</button></td>
+                    <td><button title="Borrar viaje" onclick="deleteTravel(`<%= travel.id %>`)">❌</button></td>
                     
             <% }) %>
 

@@ -54,6 +54,23 @@ app.post("/insert", (req, res) => {
     res.redirect("/admin")
 
 })
+
+app.delete("/delete/:id", (req, res) => {
+  const idDelete = req.params.id
+  // console.log("El id es", idDelete);
+  const newJsonData = jsonData.filter(travel => travel.id != idDelete)
+  // jsonData = newJsonData
+  // console.log(newJsonData);
+ fs.writeFileSync(path.join(__dirname, "data", "travels.json"), JSON.stringify(newJsonData, null, 2), "utf-8")
+    jsonData.length = 0
+    newJsonData.forEach( travel => {
+      jsonData.push(travel)
+    })
+    res.json({"mensaje": "elemento borrado correctamente"})
+
+  // setTimeout(() => res.json({"mensaje": "elemento borrado correctamente"}), 200)
+
+})
  
 app.listen(PORT, () => {
   console.log(`Servidor levantado en http://localhost:${PORT}`);

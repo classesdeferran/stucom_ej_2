@@ -52,5 +52,23 @@
     "descripcion": "16 días de viaje, con hoteles de lujo y vuelos incluidos",
     "precio": 989.78,
     "img": "https://images.unsplash.com/photo-1557750255-c76072a7aad1?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+  },
+  {
+    "ruta": "/islandia",
+    "lugar": "Islandia",
+    "nombre": "Islandia sin límites",
+    "descripcion": "Incluye vuelos, hoteles y excursiones",
+    "precio": 6000,
+    "img": "https://images.unsplash.com/photo-1529963183134-61a90db47eaf?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8OXx8aWNlbGFuZHxlbnwwfHwwfHx8Mg%3D%3D",
+    "id": "d53bcc0b-be5f-4090-8eea-60b998c85241"
+  },
+  {
+    "ruta": "/paris",
+    "lugar": "Paris",
+    "nombre": "Paris Oh la la",
+    "descripcion": "Todo carísimo",
+    "precio": 1500,
+    "img": "https://plus.unsplash.com/premium_photo-1661919210043-fd847a58522d?q=80&w=871&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    "id": "6be2c353-3d20-4d90-9a37-1821930a8a20"
   }
 ]
