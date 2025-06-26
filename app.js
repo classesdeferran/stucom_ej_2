@@ -20,7 +20,9 @@ app.use(express.urlencoded({extended: true}))
 app.use(express.json())
 
 // CARGAR LOS DATOS
-const jsonData = require("./data/travels.json");
+const jsonDataInicial = require("./data/travels.json");
+const jsonData = jsonDataInicial.sort( (a, b) => a.lugar.localeCompare(b.lugar, "es", {numeric:true}))
+
 jsonData.forEach(travel => {
   // RUTAS
   app.get(`${travel.ruta}`, (req, res) => {
@@ -69,6 +71,34 @@ app.delete("/delete/:id", (req, res) => {
     res.json({"mensaje": "elemento borrado correctamente"})
 
   // setTimeout(() => res.json({"mensaje": "elemento borrado correctamente"}), 200)
+
+})
+
+app.put("/update/:id", (req, res) => {
+  const idUpdate = req.params.id
+  const body = req.body
+  // console.log(body);
+
+  // const newJsonData = jsonData.filter(travel => travel.id != idUpdate)
+  // // console.log(newJsonData);
+  // body.precio = parseFloat(body.precio) 
+  // newJsonData.push(body)
+  // fs.writeFileSync(path.join(__dirname, "data", "travels.json"), JSON.stringify(newJsonData, null, 2), "utf-8")
+
+  for ( travel of jsonData) {
+    if (travel.id == idUpdate) {
+      for (clave in travel) {
+        travel[clave] = body[clave]
+      }
+      break
+    }
+  }
+
+  console.log(jsonData);
+  fs.writeFileSync(path.join(__dirname, "data", "travels.json"), JSON.stringify(newJsonData, null, 2), "utf-8")
+  
+
+  res.send("todo OK")
 
 })
  

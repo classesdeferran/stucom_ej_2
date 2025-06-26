@@ -9,21 +9,12 @@
     "img": "https://images.unsplash.com/photo-1498503182468-3b51cbb6cb24?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
   },
   {
-    "id": 2,
-    "ruta": "/maldivas",
-    "lugar": "Maldivas",
-    "nombre": "Maldivas soñadas",
-    "descripcion": "8 días de viaje, con resort en plena playa y vuelos incluidos",
-    "precio": 2800.45,
-    "img": "https://images.unsplash.com/photo-1540202404-a2f29016b523?q=80&w=1933&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-  },
-  {
-    "id": 3,
+    "id": "3",
     "ruta": "/egipto",
     "lugar": "Egipto",
     "nombre": "Descubriendo Egipto",
     "descripcion": "15 días de viaje, con crucero incluido por el Nilo y vuelos incluidos",
-    "precio": 960.75,
+    "precio": "1500",
     "img": "https://images.unsplash.com/photo-1553913861-c0fddf2619ee?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
   },
   {
@@ -52,5 +43,14 @@
     "descripcion": "16 días de viaje, con hoteles de lujo y vuelos incluidos",
     "precio": 989.78,
     "img": "https://images.unsplash.com/photo-1557750255-c76072a7aad1?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+  },
+  {
+    "id": "2",
+    "ruta": "/maldivas",
+    "lugar": "Maldivas",
+    "nombre": "Maldivas soñadas",
+    "descripcion": "8 días de viaje, con resort en plena playa y vuelos incluidos",
+    "precio": "6000",
+    "img": "https://images.unsplash.com/photo-1540202404-a2f29016b523?q=80&w=1933&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
   }
 ]

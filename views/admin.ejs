@@ -10,7 +10,7 @@
 <body>
     <header><h1>Express Travels</h1></header>
     <main>
-        <section>
+        <section id="insert">
             <h2>Añadir destino</h2>
             <form action="/insert" method="POST">
                 <div>
@@ -44,6 +44,41 @@
                 </div>
             </form>
         </section>
+        <section id="update">
+            <h2>Modificar datos</h2>
+            <form id = "dataUpdate">
+                <input type="hidden" id="update_id" name="update_id">
+                <div>
+                    <label for="update_ruta">Ruta :</label>
+                    <input type="text" id="update_ruta" name="update_ruta">
+                </div>
+                                <div>
+                    <label for="update_lugar">Lugar :</label>
+                    <input type="text" id="update_lugar" name="update_lugar">
+                </div>
+                                <div>
+                    <label for="update_nombre">Nombre :</label>
+                    <input type="text" id="update_nombre" name="update_nombre">
+                </div>
+                                <div>
+                    <label for="update_descripcion">Descripción :</label>
+                    <input type="text" id="update_descripcion" name="update_descripcion">
+                </div>
+                                </div>
+                                <div>
+                    <label for="update_precio">Precio :</label>
+                    <input type="text" id="update_precio" name="update_precio">
+                </div>
+                                <div>
+                    <label for="update_img">Ruta de la imagen :</label>
+                    <input type="text" id="update_img" name="update_img">
+                </div>
+                <div id="buttons">
+                    <button type="submit">Aceptar</button>
+                    <button type="reset">Borrar</button>
+                </div>
+            </form>
+        </section>     
         <section>
             <table>
                 <tr>
@@ -60,7 +95,7 @@
                     <td><%= travel.lugar %></td>
                     <td><%= travel.nombre %></td>
                     <td><%= travel.precio %></td>
-                    <td><button title="Editar viaje">✏️</button></td>
+                    <td><button title="Editar viaje" onclick="editTravel('<%= JSON.stringify(travel) %> ')">✏️</button></td>
                     <td><button title="Borrar viaje" onclick="deleteTravel(`<%= travel.id %>`)">❌</button></td>
                     
             <% }) %>
