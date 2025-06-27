@@ -1,9 +1,12 @@
 // DEPENDENCIAS DEL PROYECTO
-const fs = require("node:fs");
+
 const path = require("node:path");
-const crypto = require('node:crypto')
+
 const express = require("express"); // Sintaxis commonjs
 const app = express();
+
+
+const {deleteItem, writeTravelsJSON, insertItem} = require('./utils/funciones')
 
 // PUERTO DE CONEXIÓN
 process.loadEnvFile();
@@ -45,14 +48,16 @@ app.get("/admin", (req, res) => {
 app.post("/insert", (req, res) => {
     // console.log(req.body);
     let newTravel = req.body
-    if (newTravel.ruta[0] != "/") {
-        newTravel.ruta = "/"+newTravel.ruta
-    }    
-    newTravel.precio = parseFloat(newTravel.precio)
-    newTravel.id = crypto.randomUUID()
-    jsonData.push(newTravel)
+    insertItem (newTravel, jsonData)
+    // if (newTravel.ruta[0] != "/") {
+    //     newTravel.ruta = "/"+newTravel.ruta
+    // }    
+    // newTravel.precio = parseFloat(newTravel.precio)
+    // newTravel.id = crypto.randomUUID()
+    // jsonData.push(newTravel)
     // console.log(jsonData);
-    fs.writeFileSync(path.join(__dirname, "data", "travels.json"), JSON.stringify(jsonData, null, 2), "utf-8")
+    writeTravelsJSON(jsonData)
+    // fs.writeFileSync(path.join(__dirname, "data", "travels.json"), JSON.stringify(jsonData, null, 2), "utf-8")
     res.redirect("/admin")
 
 })
@@ -60,10 +65,13 @@ app.post("/insert", (req, res) => {
 app.delete("/delete/:id", (req, res) => {
   const idDelete = req.params.id
   // console.log("El id es", idDelete);
-  const newJsonData = jsonData.filter(travel => travel.id != idDelete)
+  // const newJsonData = jsonData.filter(travel => travel.id != idDelete)
+
+  const newJsonData = deleteItem(jsonData, idDelete)
   // jsonData = newJsonData
   // console.log(newJsonData);
- fs.writeFileSync(path.join(__dirname, "data", "travels.json"), JSON.stringify(newJsonData, null, 2), "utf-8")
+  writeTravelsJSON(newJsonData)
+ // fs.writeFileSync(path.join(__dirname, "data", "travels.json"), JSON.stringify(newJsonData, null, 2), "utf-8")
     jsonData.length = 0
     newJsonData.forEach( travel => {
       jsonData.push(travel)
@@ -95,9 +103,8 @@ app.put("/update/:id", (req, res) => {
   }
 
   console.log(jsonData);
-  fs.writeFileSync(path.join(__dirname, "data", "travels.json"), JSON.stringify(newJsonData, null, 2), "utf-8")
-  
-
+  // fs.writeFileSync(path.join(__dirname, "data", "travels.json"), JSON.stringify(newJsonData, null, 2), "utf-8")
+  writeTravelsJSON(jsonData)
   res.send("todo OK")
 
 })
